@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\ِAPI;
 // use App\Http\Controllers\Controller;
-use App\Http\Controllers\API\BaseController as BaseController;
 
 use Illuminate\Http\Request;
 use App\User;
 Use Validator;
 use Response;
+use App\Http\Controllers\API\BaseController as BaseController;
 
 class APIRegisterController extends BaseController
 {
