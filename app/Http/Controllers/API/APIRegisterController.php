@@ -14,6 +14,7 @@ class APIRegisterController extends BaseController
     public function registerUser(Request $request)
     {
         $input = $request->all();
+        return $input;
         $validator =  Validator::make($input,[
         'name'=> 'required',
         'email'=> 'required|string|email|max:255|unique:users',
