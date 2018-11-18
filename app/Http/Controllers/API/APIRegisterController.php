@@ -24,7 +24,6 @@ class APIRegisterController extends BaseController
         if ($validator->fails()) {
         return response()->json($validator->errors());
         }
-        return "Error here ";
 
        $user = User::create([
         'name'=> $input['name'],
