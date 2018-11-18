@@ -17,7 +17,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql_heroku'),//  ,mysql
+    'default' => env('DB_CONNECTION', 'pgsql_heroku'),//  ,mysql , pgsql_heroku
 
     /*
     |--------------------------------------------------------------------------

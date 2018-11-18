@@ -19,3 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::post('register','API\APIRegisterController@registerUser');
+
+Route::middleware('auth:api')->group(function () {
+    Route::apiResource('books', 'API\BookController');
+});
