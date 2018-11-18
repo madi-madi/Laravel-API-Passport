@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 Use Validator;
 use Response;
+use Auth;
 use App\Http\Controllers\API\BaseController as BaseController;
 
 class APIRegisterController extends BaseController
