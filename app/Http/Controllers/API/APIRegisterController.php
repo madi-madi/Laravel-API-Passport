@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\API;
-// use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\User;
@@ -14,7 +13,6 @@ class APIRegisterController extends BaseController
     public function registerUser(Request $request)
     {
         $input = $request->all();
-        // return $input;
         $validator =  Validator::make($input,[
         'name'=> 'required',
         'email'=> 'required|string|email|max:255|unique:users',
@@ -24,7 +22,6 @@ class APIRegisterController extends BaseController
         ]);
 
         if ($validator->fails()) {
-        # code...
         return response()->json($validator->errors());
         }
 
@@ -36,7 +33,5 @@ class APIRegisterController extends BaseController
         $success['token'] = $user->createToken('MyApp')->accessToken;
         $success['name'] = $user->name;
         return $this->sendResponse($success,'User created successfully');
-
-        // $user = User::first();
     }
 }
