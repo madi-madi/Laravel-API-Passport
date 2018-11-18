@@ -30,7 +30,6 @@ class APIRegisterController extends BaseController
         'email'=> $input['email'],
         'password'=> bcrypt($input['password']),
         ]);
-        return $user;
         $success['token'] = $user->createToken('apiPassport')->accessToken;
         $success['name'] = $user->name;
         return $this->sendResponse($success,'User created successfully');
