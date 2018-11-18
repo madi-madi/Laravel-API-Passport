@@ -24,12 +24,14 @@ class APIRegisterController extends BaseController
         if ($validator->fails()) {
         return response()->json($validator->errors());
         }
+        return "Error here ";
 
        $user = User::create([
         'name'=> $input['name'],
         'email'=> $input['email'],
         'password'=> bcrypt($input['password']),
         ]);
+        return $user;
         $success['token'] = $user->createToken('MyApp')->accessToken;
         $success['name'] = $user->name;
         return $this->sendResponse($success,'User created successfully');
